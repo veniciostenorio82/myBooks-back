@@ -1,21 +1,19 @@
 package com.estudo.libraryjava.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "books")
 public class Book {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     private String title;
     private String genre;
     private Integer publicationYear;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

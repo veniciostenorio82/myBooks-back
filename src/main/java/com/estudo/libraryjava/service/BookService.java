@@ -22,7 +22,7 @@ public class BookService {
 
     }
 
-    public Book findById(Long id){
+    public Book findById(String id){
         Book existingBook = repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return existingBook;
     }
@@ -32,7 +32,7 @@ public class BookService {
 
     }
     
-    public Book update(Long id, Book book) {
+    public Book update(String id, Book book) {
 
         Book existingBook = repository.findById(id).orElseThrow();
 
@@ -44,7 +44,7 @@ public class BookService {
 
     }
 
-    public Book delete(Long id, Book book) {
+    public Book delete(String id, Book book) {
         repository.deleteById(id);
         return null;
     }
